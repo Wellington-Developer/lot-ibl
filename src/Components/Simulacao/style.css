@@ -1,0 +1,78 @@
+.container-simulacao {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 80px 0;
+  gap: 30px;
+}
+
+.simulacao {
+  margin-top: 60px;
+}
+
+.box-simulacao {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.simulacao h1 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.simulacao p {
+  text-align: center;
+}
+
+.container-simulacao .box-simulacao h1 {
+  font-size: 24px;
+}
+
+.container-simulacao .box-simulacao p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.container-simulacao .box-simulacao a {
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-simulacao .box-simulacao a {
+  padding: 0.8rem 1.2rem;
+  background: #001781;
+  color: white;
+  font-size: 20px;
+  font-weight: semi-bold;
+  cursor: pointer;
+  border: none;
+  min-width: 8rem;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: 0.1s;
+}
+
+.container-simulacao .box-simulacao a:hover,
+.container-simulacao .box-simulacao a:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #C6D0FF, 0 0 0 4px #8D9FEF;
+}
+
+@media screen and (max-width: 800px) {
+  .container-simulacao {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 80px 20px;
+  }  
+}
+
+@media screen and (max-width: 600px) {
+  .container-simulacao {
+    grid-template-columns: repeat(1, 1fr);
+  }  
+}

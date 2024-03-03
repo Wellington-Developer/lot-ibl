@@ -1,0 +1,18 @@
+.info-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.info-content svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  color: #23A6F0;
+}
+
+.info-content h1 {
+  font-size: 1rem;
+  color: #667085;
+}

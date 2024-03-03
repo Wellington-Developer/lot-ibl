@@ -1,0 +1,104 @@
+.filter-page__container {
+  max-width: 1264px;
+  margin: 0 auto;
+  padding: 60px 0px;
+}
+
+.filter-page__content {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+}
+
+.filter-page__container .left-side {
+  background: #E6EAF0;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 300px;
+  min-width: 300px;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 30px;
+  max-height: 90vh;
+}
+
+.info-filter h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+.info-filter p {
+  font-size: 14px;
+  color: #474D59;
+  margin-bottom: 30px;
+}
+
+.check-filter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.check-filter label {
+  margin-left: 10px;
+  font-size: 14px;
+  font-family: 'Roboto';
+}
+
+.price-filter, .size-filter {
+  margin-bottom: 30px;
+}
+
+.price-filter h1, .size-filter h1, .rooms-slider h1, .bathrooms-slider h1 {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  margin-bottom: 14px;
+}
+
+.rooms-slider, .bathrooms-slider {
+  margin-bottom: 30px;
+}
+
+.filter-page__container .right-side {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.price-controller, .slider-controller {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1200px) {
+  .filter-page__content {
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+  }
+
+  .filter-page__container .left-side {
+    background: #E6EAF0;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 90%;
+    min-width: 0;
+    position: -webkit-sticky; /* Safari */
+    position: initial;
+    top: 30px;
+    max-height: 550px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .filter-page__container .right-side {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0 auto;
+    align-items: center;
+    gap: 32px;
+  }
+}

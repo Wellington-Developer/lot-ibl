@@ -1,0 +1,15 @@
+.post-edit__container {
+  padding: 60px 0;
+}
+
+.post-edit__container form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .post-edit__container form {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

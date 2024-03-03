@@ -1,0 +1,135 @@
+.post-container__home {
+  max-width: 100%;
+  width: 100%;
+  border: 1px solid #E6EAF0;
+  border-radius: 10px;
+  cursor: pointer;
+  flex-shrink: 0;
+  max-width: 380px;
+}
+
+.info-content__post,
+.locale-content__post,
+.title-content__post,
+.price-content__post {
+  margin: 0 20px;
+}
+
+.photo-content__post img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.post-content__home .photo-content__post {
+  height: 300px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.status {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.status h1 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.info-content__post {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid #E6EAF0;
+  margin-bottom: 20px;
+}
+
+.locale-content__post p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #474D59;
+  margin-bottom: 47px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  max-width: 500px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.locale-content__post svg {
+  width: 20px;
+  height: 20px;
+  color: #23A6F0;
+}
+
+.locale-content__post p::after {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: -20px;
+  background: #23A6F0;
+  width: 5px;
+  height: 5px;
+  border-radius: 10px;
+}
+
+.title-content__post h1 {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+  color: #0b0c12;
+  text-align: center;
+  margin-bottom: 12px;
+  max-width: 500px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform:uppercase;
+  }
+
+.price-content__post h1 {
+  font-size: 18px;
+  text-align: center;
+  color: #23A6F0;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1250px) {
+  .post-container__home {
+    flex-shrink: 1;
+  }  
+}
+
+@media screen and (max-width: 1000px) {
+  .post-container__home {
+    flex-shrink: 0;
+    max-width: 300px;
+  }  
+
+  .title-content__post h1 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .locale-content__post p {
+    font-size: 14px;
+  }
+}

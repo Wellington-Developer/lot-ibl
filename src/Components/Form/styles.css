@@ -1,0 +1,131 @@
+.background {
+  width: 100%;
+  height: 600px; /* 100% da altura da viewport */
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0; /* Alterado de right: 0 para top: 0 */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* Cobrir toda a área, mantendo a proporção */
+}
+
+.form-content__home {
+  max-width: 1262;
+  margin: 180px auto;
+}
+
+.form-content__home form {
+  display: flex;
+  width: 100%;
+}
+
+.form-content__home select:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.form-content__home select:hover,
+.form-content__home select:focus,
+.form-content__home select:active,
+.form-content__home select:checked,
+.form-content__home select option {
+  border: 1px solid #3f3f3f;
+  outline: none;
+  transition: 0.9s ease-in-out all;
+}
+
+.form-content__home select {
+  cursor: pointer;
+  transition: color 0s 2147483647s;
+  width: 100%;
+  padding: 15px 23px;
+  -webkit-appearance: none;
+  border: 1px solid #EDEDED;
+  background: transparent;
+  font-family: 'Poppins';
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  font-weight: 500;
+  color: #252B42;
+  background: white;
+  border-radius: 0;
+  margin: 0;
+}
+
+.form-content__home button {
+  background: #23A6F0;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  cursor: pointer;
+}
+
+.form-content__home button svg {
+  width: 24px;
+  height: 24px;
+  color: #EDEDED;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-content__home button:hover svg {
+  color: #252B42;
+}
+
+.buttons-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.buttons-form button {
+  padding: 12px 24px;
+  border-radius: 10px 10px 0 0;
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 14px;
+  color: white;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 0.1px;
+}
+
+.buttons-form button:hover {
+  background: #252B42;
+}
+
+
+@media screen and (max-width: 600px) {
+  .form-content__home form {
+    flex-direction: column;
+  }
+
+  .form-content__home select:first-child {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .form-content__home button {
+    border-radius: 0 0 10px 10px;
+  }
+
+  .form-content__home {
+    margin: 80px auto;
+  }
+
+  .buttons-form button {
+    padding: 12px 24px;
+    border-radius: 10px 10px 0 0;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 14px;
+    color: white;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 0.1px;
+  }
+}

@@ -1,0 +1,55 @@
+.img-opened {
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9999999;
+  position: absolute;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close svg {
+  color: white;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.img-opened img {
+  max-width: 80%;
+  margin: 0 auto;
+  z-index: 9999999;
+}
+
+.button-control {
+  margin: 20px;
+  border-radius: 20px;
+}
+
+.button-control svg {
+  color: white;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .button-control {
+    position: absolute;
+    bottom: 20px;
+    right: 70px;
+  }
+
+  .button-control:last-child {
+    right: 10px;
+  }
+
+}

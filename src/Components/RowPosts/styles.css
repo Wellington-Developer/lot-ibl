@@ -1,0 +1,31 @@
+#title_post {
+  font-size: 48px;
+}
+
+.posts-container__home {
+  padding: 60px 0;
+  overflow-x: auto;
+}
+
+.posts-content__home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  flex: 1;
+  position: relative;
+}
+
+#type {
+  margin-bottom: 24px;
+}
+
+.info-post__c {
+  display: flex;
+}
+
+.posts-container__home #link {
+  padding: 12px 24px;
+  color: #333;
+  margin-bottom: 24px;
+}
