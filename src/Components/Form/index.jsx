@@ -2,6 +2,9 @@ import React, { useEffect, useState, useContext } from "react";
 import './styles.css';
 import { MdSearch } from 'react-icons/md';
 import { UserContext } from '../../UserContext';
+import Img1 from '../../../public/assets/1.jpg'
+import Img2 from '../../../public/assets/2.jpg'
+import Img3 from '../../../public/assets/3.jpg'
 
 export const Form = () => {
   const { posts, filterPosts } = useContext(UserContext);
@@ -15,9 +18,9 @@ export const Form = () => {
   const [imageIndex, setImageIndex] = useState(0);
 
   const images = [
-    'https://plus.unsplash.com/premium_photo-1675324517011-24d2c741c22f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1296&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=1467&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    Img1,
+    Img2,
+    Img3
   ];
 
   const filterData = () => {
@@ -46,7 +49,8 @@ export const Form = () => {
     }
   };
 
-  const handleScrollDown = () => {
+  const handleScrollDown = (e) => {
+    e.preventDefault()
     window.scrollBy(0, 500);
   };
 
@@ -63,7 +67,7 @@ export const Form = () => {
     if (posts) {
       filterPosts(tipo, cidade, bairro, tipoNegocio);
     }
-  }, [tipo, cidade, bairro, tipoNegocio, posts]);
+  }, [tipo, cidade, bairro, tipoNegocio]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -74,7 +78,7 @@ export const Form = () => {
   }, []);
 
   return (
-    <div className="home-container">
+    <div className="home-container container">
       <div className="background" style={{ backgroundImage: `url(${images[imageIndex]})` }}>
 
       </div>

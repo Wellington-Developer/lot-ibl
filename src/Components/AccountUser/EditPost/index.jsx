@@ -37,8 +37,16 @@ export const EditPost = () => {
   const locacaoOuVendaOptions = ['Locacao', 'Venda'];
 
   const handlePost = () => {
-    navigate('/');
-    window.location.reload();
+    if(loading) {
+      console.log("Carregando")
+    } else {
+      alert("Você fez a postagem, clique aqui para redirecionar..")
+      setTimeout(function() {
+        navigate('/');
+        window.location.reload();
+        setLoad(false)
+      }, 1000);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -167,7 +175,7 @@ export const EditPost = () => {
         <Input label="Metros privativos totais" name="metros_privativos" type="text" {...metros_privativos}/>
         <Input label="Metros totais" name="metros_totais" type="text" {...metros_totais}/>
         <Input label="Titulo informações adicionais" name="informacao_adicional_titulo" type="text" {...informacao_adicional_titulo}/>
-        <Input label="Paragrafo informações adicionais" name="informacao_adicional_paragrafo" type="text" {...informacao_adicional_paragrafo}/>
+        <Input label="Texto informações adicionais" name="informacao_adicional_paragrafo" type="text" {...informacao_adicional_paragrafo}/>
         <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
           <option value="">Selecione o tipo</option>
           {tipos.map((type) => (
@@ -188,7 +196,15 @@ export const EditPost = () => {
           <label htmlFor="arquivo">Enviar arquivos</label>
           <input type="file" multiple onChange={handleImgChange} name="arquivo" id="arquivo" />
         </div>
-        <button onClick={handlePost}>Fazer postagem</button>
+        {
+          loading ?
+          (
+            <button onClick={handlePost} disabled>Fazendo postagem</button>
+          ) :
+          (
+            <button onClick={handlePost}>Fazer postagem</button>
+          )
+        }
         {<p id="error">{error}</p>}
       </form>
     </div>

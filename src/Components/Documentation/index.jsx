@@ -6,6 +6,7 @@ import { PessoaJuridica } from './PessoaJuridica'
 import { Fiadores } from './Fiadores'
 import { Garantia } from './Garantia'
 import { Esclarecimento } from './Esclarecimento'
+import Img1 from '../../../public/assets/1.jpg';
 
 export const Documentation = () => {
     const [ activeLink, setActiveLink ] = useState('Locatário (a) - Pessoa Física')
@@ -29,9 +30,10 @@ export const Documentation = () => {
     ]
     return (
         <div className="documentation-container">
-            {
-                console.log(activeLink)
-            }
+            <div className="banner">
+                <img src={Img1} />
+                <h1>Documentação</h1>
+            </div>
             <div className="content-documentation container">
                 <div className="top-side__documentation">
                     <ul>

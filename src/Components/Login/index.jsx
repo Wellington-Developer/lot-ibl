@@ -38,7 +38,7 @@ export const Login = () => {
               }
 
               
-              <Link to="create">Não possui conta?</Link>
+              <Link to="create"></Link>
             </div>
               {
                 error && <p id='error'>{error}</p>

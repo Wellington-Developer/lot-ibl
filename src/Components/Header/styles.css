@@ -1,6 +1,7 @@
 header {
   background: white;
   border-bottom: 1px solid #d3d3d3;
+  z-index: 9999999999999999;
 }
 
 .social-header {

@@ -19,7 +19,7 @@ function App() {
     <BrowserRouter>
       <UserStorage>
         <Header />
-        <div className="container">
+        <div>
           <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/post/:id" element={<PostPage />}/>

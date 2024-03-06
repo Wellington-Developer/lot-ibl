@@ -108,7 +108,7 @@ export const Post = () => {
   return (
     <div className="animeLeft container-form__post">
       <form onSubmit={handleSubmit}>
-        <Input label="Número do Imóvel" name="numero_imovel" type="text" {...numeroImovel} />
+        <Input label="Número do endereço do Imóvel" name="numero_imovel" type="text" {...numeroImovel} />
         <Input label="CEP" name="cep" type="text" value={cep} onChange={handleCepChange} />
         <Input label="Localidade" name="localidade" type="text" {...localidade}/>
         <Input label="Cidade" name="cidade" type="text" {...cidade}/>
@@ -149,7 +149,7 @@ export const Post = () => {
         <Input label="Metros privativos totais" name="metros_privativos" type="text" {...metros_privativos}/>
         <Input label="Metros totais" name="metros_totais" type="text" {...metros_totais}/>
         <Input label="Titulo informações adicionais" name="informacao_adicional_titulo" type="text" {...informacao_adicional_titulo}/>
-        <Input label="Paragrafo informações adicionais" name="informacao_adicional_paragrafo" type="text" {...informacao_adicional_paragrafo}/>
+        <Input label="Texto informações adicionais" name="informacao_adicional_paragrafo" type="text" {...informacao_adicional_paragrafo}/>
         <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
           <option value="">Selecione o tipo</option>
           {tipos.map((type) => (

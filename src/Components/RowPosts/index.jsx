@@ -59,7 +59,7 @@ export const RowPosts = () => {
   }, [data, dataLocacao, dataVenda]);
 
   return (
-    <>
+    <div className="container">
       {filteredPosts && filteredPosts.length > 0 && (
           <>
           <div className="controller-post">
@@ -151,6 +151,6 @@ export const RowPosts = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };

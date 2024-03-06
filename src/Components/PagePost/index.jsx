@@ -65,7 +65,7 @@ export const PostPage = () => {
     <>
     {
       data && (
-        <div className="post-page__container">
+        <div className="post-page__container container">
           <div className="post-page__content">
             <div className="img-post__page">
               <div className="img-1">
@@ -175,7 +175,7 @@ export const PostPage = () => {
                 ))}
                 </div>
 
-                <button id="button-galery">Comprar</button>
+                <button id="button-galery">Mais informações</button>
               </div>
             </div>
           </div>

@@ -61,7 +61,7 @@ export const UserStorage = ({ children }) => {
       const { token } = await tokenRes.json();
       window.localStorage.setItem('token', token);
       await getUser(token);
-      navigate('/account');
+      navigate('/accountuser');
     } catch (err) {
       setError(err.message);
       setLogin(false);
@@ -111,8 +111,6 @@ export const UserStorage = ({ children }) => {
         if (!isNaN(precoMin) && !isNaN(precoMax)) {
           filteredPosts = filteredPosts.filter((post) => precoMin <= post.preco && post.preco <= precoMax);
         }
-  
-        console.log(filteredPosts)
         setFilteredPosts(filteredPosts);
       } catch (err) {
         setError(err);
@@ -130,7 +128,7 @@ export const UserStorage = ({ children }) => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ userLogin, data, login, logoutUser, error, loading, filterPosts, posts, filteredPosts, typeFilter, setTypeFilter }}>
+    <UserContext.Provider value={{ userLogin, data, login, logoutUser, error, loading, filterPosts, posts, filteredPosts, typeFilter, setTypeFilter, setFilteredPosts }}>
       {children}
     </UserContext.Provider>
   );

@@ -38,7 +38,7 @@ export const Contact = () => {
 
     return (
         <div>
-            <div className="contact-container">
+            <div className="contact-container container">
                 <div className="left-side__contact">
                     <div className="media-social__contact">
                         <h1>Mídia Social</h1>
