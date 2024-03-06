@@ -50,13 +50,20 @@ export const Form = () => {
     window.scrollBy(0, 500);
   };
 
+  const handleTipoNegocioClick = (value) => {
+    setTipoNegocio(value);
+    filterPosts(tipo, cidade, bairro, value);
+  };
+
   useEffect(() => {
     filterData();
   }, [posts]);
-
+  
   useEffect(() => {
-    filterPosts(tipo, cidade, bairro, tipoNegocio);
-  }, [tipo, cidade, bairro, tipoNegocio]);
+    if (posts) {
+      filterPosts(tipo, cidade, bairro, tipoNegocio);
+    }
+  }, [tipo, cidade, bairro, tipoNegocio, posts]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -74,38 +81,38 @@ export const Form = () => {
       <div className="form-container__home">
         <div className="form-content__home">
           <div className="buttons-form">
-            <button>Locação</button>
-            <button>Venda</button>
+            <button onClick={() => handleTipoNegocioClick('Locacao')}>Locação</button>
+            <button onClick={() => handleTipoNegocioClick('Venda')}>Venda</button>
           </div>
           <form action="">
-              <select onChange={(e) => setTipo(e.target.value)} value={tipo}>
-                <option value="">Tipo</option>
-                {tipos.map((tipo, index) => (
-                  <option key={index} value={tipo}>
-                    {tipo}
-                  </option>
-                ))}
-              </select>
+            <select onChange={(e) => setTipo(e.target.value)} value={tipo}>
+              <option value="">Tipo</option>
+              {tipos.map((tipo, index) => (
+                <option key={index} value={tipo}>
+                  {tipo}
+                </option>
+              ))}
+            </select>
 
-              <select onChange={(e) => setCidade(e.target.value)} value={cidade}>
-                <option value="">Cidade</option>
-                {cidades.map((cidade, index) => (
-                  <option key={index} value={cidade}>
-                    {cidade}
-                  </option>
-                ))}
-              </select>
+            <select onChange={(e) => setCidade(e.target.value)} value={cidade}>
+              <option value="">Cidade</option>
+              {cidades.map((cidade, index) => (
+                <option key={index} value={cidade}>
+                  {cidade}
+                </option>
+              ))}
+            </select>
 
-              <select onChange={(e) => setBairro(e.target.value)} value={bairro}>
-                <option value="">Bairro</option>
-                {bairros.map((bairro, index) => (
-                  <option key={index} value={bairro}>
-                    {bairro}
-                  </option>
-                ))}
-              </select>
-              <button onClick={handleScrollDown}><MdSearch /></button>
-            </form>
+            <select onChange={(e) => setBairro(e.target.value)} value={bairro}>
+              <option value="">Bairro</option>
+              {bairros.map((bairro, index) => (
+                <option key={index} value={bairro}>
+                  {bairro}
+                </option>
+              ))}
+            </select>
+            <button onClick={handleScrollDown}><MdSearch /></button>
+          </form>
         </div>
       </div>
     </div>

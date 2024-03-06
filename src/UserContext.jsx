@@ -94,12 +94,12 @@ export const UserStorage = ({ children }) => {
         // Faz a filtragem dos posts
         let filteredPosts = posts.filter(
           (post) =>
-            (cidade === '' || post.cidade === cidade) &&
-            (bairro === '' || post.bairro === bairro) &&
-            (tipoNegocio === '' || post.locacao_ou_venda === tipoNegocio) &&
-            (tipo === '' || post.tipo === tipo) &&
-            (post.qtd_banheiros >= banheirosMin && post.qtd_banheiros <= banheirosMax) &&
-            (post.qtd_quartos >= quartosMin && post.qtd_quartos <= quartosMax)
+          (cidade === '' || post.cidade.toLowerCase() === cidade.toLowerCase()) &&
+          (bairro === '' || post.bairro.toLowerCase() === bairro.toLowerCase()) &&
+          (tipoNegocio === '' || post.locacao_ou_venda.toLowerCase() === tipoNegocio.toLowerCase()) &&
+          (tipo === '' || post.tipo.toLowerCase() === tipo.toLowerCase()) &&
+          (isNaN(banheirosMin) || (post.qtd_banheiros >= banheirosMin && post.qtd_banheiros <= banheirosMax)) &&
+          (isNaN(quartosMin) || (post.qtd_quartos >= quartosMin && post.qtd_quartos <= quartosMax))
         );
   
         // Aplica filtro para posts comerciais, se necessário
@@ -112,6 +112,7 @@ export const UserStorage = ({ children }) => {
           filteredPosts = filteredPosts.filter((post) => precoMin <= post.preco && post.preco <= precoMax);
         }
   
+        console.log(filteredPosts)
         setFilteredPosts(filteredPosts);
       } catch (err) {
         setError(err);

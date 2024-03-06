@@ -74,7 +74,9 @@ export const Header = () => {
                   <Link to="/doc">
                     <li><a href="">Documentação</a></li>
                   </Link>
-                  <li><a href="">Contato</a></li>
+                  <Link to="/contact">
+                    <li><a href="">Contato</a></li>
+                  </Link>
                   {
                     data && data.username == "admin" && (
                       <Link to="/accountuser/send-post">

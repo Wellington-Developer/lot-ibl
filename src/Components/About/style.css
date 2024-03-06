@@ -30,7 +30,6 @@
   object-fit: cover;
   height: 100%;
   width: 100%;
-  display: none;
 }
 
 .banner-about h1 {
@@ -43,7 +42,7 @@
 
 .feedback-about {
   padding: 60px 20px;
-  margin-top: 600px;
+  margin-top: 450px;
 }
 
 .feedback-about h1 {

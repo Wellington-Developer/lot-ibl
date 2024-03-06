@@ -1,0 +1,77 @@
+#error {
+  color: red;
+  font-size: 1rem;
+  margin-top: 12px;
+}
+
+.login-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+.info-login {
+  margin-bottom: 60px;
+}
+
+.left-side__login, .right-side__login {
+  flex: 1;
+}
+
+.left-side__login img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  height: 70vh;
+}
+
+.right-side__login {
+  padding: 60px 0;
+}
+
+.right-side__login h1 {
+  font-size: 2.5rem;
+  padding-bottom: 4px;
+  color: #0B0C12;
+}
+
+.right-side__login p {
+  font-size: 1.2rem;
+  color: #363B47;
+}
+
+.send-info {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.send-info a {
+  font-size: 1rem;
+}
+
+.send-info button {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+
+@media screen and (max-width: 800px) {
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .left-side__login img {
+    display: none;
+  }
+}

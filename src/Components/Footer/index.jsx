@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import logoPng from '../../assets/logos/logo.png'
+import logoPng from '../../../public/assets/logo.png'
 import { UserContext } from '../../UserContext'
 import { Link } from 'react-router-dom';
 import { FaMapMarkerAlt, FaPhone, FaFacebook, FaInstagram } from "react-icons/fa";
@@ -26,19 +26,19 @@ export const Footer = () => {
           {
             posts &&
             <ul>
-              <Link to={`/imovel/${posts[0].id}`}>
+              <Link to={`/post/${posts[0].id}`}>
                 {
                   <li>{posts[0].title}</li>
                 }
               </Link>
 
-              <Link to={`/imovel/${posts[1].id}`}>
+              <Link to={`/post/${posts[1].id}`}>
                 {
                   <li>{posts[1].title}</li>
                 }
               </Link>
 
-              <Link to={`/imovel/${posts[2].id}`}>
+              <Link to={`/post/${posts[2].id}`}>
                 {
                   <li>{posts[2].title}</li>
                 }

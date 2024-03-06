@@ -10,7 +10,6 @@ import { PHOTO_EDIT } from '../../../api';
 export const EditPost = () => {
   const { id } = useParams();
   const { posts } = useContext(UserContext);
-  const Navigate = useNavigate()
   const status_do_imovel = useForm();
   const preco = useForm();
   const titulo = useForm();
@@ -130,7 +129,17 @@ export const EditPost = () => {
     <div className="post-edit__container">
       <form onSubmit={handleSubmit}>
         <Input label="Titulo" name="titulo" type="text" {...titulo} />
-        <Input label="Status do imóvel" name="status_do_imovel" type="text" {...status_do_imovel} />
+        <select
+            id="status_do_imovel"
+            value={status_do_imovel.value}
+            onChange={status_do_imovel.onChange}
+          >
+            <option value="">Selecione o status</option>
+            <option value="Locado">Locado</option>
+            <option value="Vendido">Vendido</option>
+            <option value="Reservado">Reservado</option>
+            <option value="Disponivel">Disponível</option>
+        </select>
         <Input label="Preço" name="preco" type="number" {...preco} />
         <Input label="Localidade" name="localidade" type="text" {...localidade} />
         <Input label="Breve descricão" name="breve_descricao" type="text" {...breve_descricao} />

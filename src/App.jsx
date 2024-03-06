@@ -11,6 +11,8 @@ import { Login } from './Components/Login'
 import GoToTop from './Components/GoToTop/index.jsx'
 import { AccountUser } from './Components/AccountUser';
 import { FilterPage } from './Components/FilterPage/index.jsx';
+import { Contact } from './Components/Contact/index.jsx';
+import { Footer } from './Components/Footer'
 
 function App() {
   return (
@@ -27,9 +29,11 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/accountuser/*" element={<AccountUser />} />
             <Route path="/filtered" element={<FilterPage />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
         <GoToTop />
+        <Footer />
       </UserStorage>
     </BrowserRouter>
   )

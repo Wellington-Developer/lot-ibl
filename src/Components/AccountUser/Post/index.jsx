@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../../../UserContext'
 
 export const Post = () => {
+  const numeroImovel = useForm();
   const status_do_imovel = useForm();
   const preco = useForm();
   const titulo = useForm();
@@ -34,6 +35,7 @@ export const Post = () => {
   const [ cep, setCep ] = useState('')
   const tipos = ['Apartamento', 'Casa', 'Sobrado', 'Kitnet', 'Chalé', 'Loft', 'Duplex', 'Triplex', 'Flat', 'Cobertura', 'Terreno'];
   const locacaOuVenda = ['Locacao', 'Venda'];
+  const statusOptions = ["", "Locado", "Vendido", "Reservado", "Disponivel"];
   const { filterPosts } = useContext(UserContext)
 
   useEffect(() => {
@@ -52,7 +54,7 @@ export const Post = () => {
         .then(data => {
           bairro.setValue(data.bairro);
           cidade.setValue(data.localidade);
-          localidade.setValue(`${data.logradouro}, ${data.bairro} - ${data.localidade}`);
+          localidade.setValue(`${data.logradouro}, ${numeroImovel.value}, ${data.bairro} - ${data.localidade}`);
         })
         .catch(error => console.error('Erro ao buscar dados do CEP:', error));
     }
@@ -79,6 +81,7 @@ export const Post = () => {
     formData.append('metros_totais', metros_totais.value);
     formData.append('informacao_adicional_titulo', informacao_adicional_titulo.value);
     formData.append('informacao_adicional_paragrafo', informacao_adicional_paragrafo.value);
+    formData.append('numero_imovel', numeroImovel.value);
   
     // Enviar features como um array
     formData.append('features', features.join(','));
@@ -100,16 +103,28 @@ export const Post = () => {
     const selectedImgs = Array.from(e.target.files);
     setImgs(selectedImgs);
   };
+  console.log(numeroImovel)
 
   return (
     <div className="animeLeft container-form__post">
       <form onSubmit={handleSubmit}>
+        <Input label="Número do Imóvel" name="numero_imovel" type="text" {...numeroImovel} />
         <Input label="CEP" name="cep" type="text" value={cep} onChange={handleCepChange} />
         <Input label="Localidade" name="localidade" type="text" {...localidade}/>
         <Input label="Cidade" name="cidade" type="text" {...cidade}/>
         <Input label="Bairro" name="bairro" type="text" {...bairro}/>
         <Input label="Titulo" name="titulo" type="text" {...titulo}/>
-        <Input label="Status do imóvel" name="status_do_imovel" type="text" {...status_do_imovel}/>
+        <select
+            id="status_do_imovel"
+            value={status_do_imovel.value}
+            onChange={status_do_imovel.onChange}
+          >
+            {statusOptions.map((option) => (
+              <option key={option} value={option}>
+                {option === "" ? "Selecione o status" : option}
+              </option>
+            ))}
+        </select>
         <Input label="Preço" name="preco" type="number" {...preco}/>
         <Input label="Breve descricão" name="breve_descricao" type="text" {...breve_descricao}/>
         <Input
@@ -158,6 +173,7 @@ export const Post = () => {
         {
           <p id="error">{error}</p>
         }
+        <button>Enviar</button>
       </form>
     </div>
   )

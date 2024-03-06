@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { UserContext } from "../../UserContext";
 import { Post } from "./Post";
 import './styles.css';
@@ -9,6 +9,7 @@ export const RowPosts = () => {
   const [dataLocacao, setDataLocacao] = useState([]);
   const [dataVenda, setDataVenda] = useState([]);
   const { filteredPosts } = useContext(UserContext);
+  const refference = useRef()
 
   const fetchData = async () => {
     try {
@@ -37,6 +38,18 @@ export const RowPosts = () => {
     }
   };
 
+  const handleScrollLeft = () => {
+    if (refference.current) {
+      refference.current.scrollLeft -= 200; // Ajuste o valor conforme necessário
+    }
+  };
+
+  const handleScrollRight = () => {
+    if (refference.current) {
+      refference.current.scrollLeft += 200; // Ajuste o valor conforme necessário
+    }
+  };
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -47,14 +60,25 @@ export const RowPosts = () => {
 
   return (
     <>
-      {filteredPosts && (
-        <div className="posts-container__home">
-          <div className="info-post__c">
-            <h1 id="type">Post filtrado</h1>
-            <Link to="/filtered" id="link">
-              Ver todos
-            </Link>
+      {filteredPosts && filteredPosts.length > 0 && (
+          <>
+          <div className="controller-post">
+            <div className="info-post__c">
+              <h1 id="type">Post filtrado</h1>
+              <Link to="/filtered" id="link">
+                Ver todos
+              </Link>
+            </div>
+            <div className="buttons">
+            <button className="scroll-button" onClick={handleScrollLeft}>
+              &lt;
+            </button>
+            <button className="scroll-button" onClick={handleScrollRight}>
+              &gt;
+            </button>
+            </div>
           </div>
+        <div className="posts-container__home" ref={refference}>
           <div className="posts-content__home">
             {filteredPosts.map((post, index) => (
               <Post
@@ -71,9 +95,11 @@ export const RowPosts = () => {
             ))}
           </div>
         </div>
+        </>
       )}
 
       {dataLocacao && (
+        <>
         <div className="posts-container__home">
           <div className="info-post__c">
             <h1 id="type">Locação</h1>
@@ -97,6 +123,7 @@ export const RowPosts = () => {
             ))}
           </div>
         </div>
+        </>
       )}
 
       {dataVenda && (
