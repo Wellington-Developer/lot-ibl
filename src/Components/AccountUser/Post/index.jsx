@@ -39,7 +39,7 @@ export const Post = () => {
   const { filterPosts } = useContext(UserContext)
 
   useEffect(() => {
-    if(data) navigate('/account');
+    if(data) navigate('/accountuser');
   }, [data, navigate])
 
   const handleCepChange = (e) => {
