@@ -103,6 +103,11 @@ export const PostPage = () => {
                 
 
                 <p id="description">{data.breve_descricao}</p>
+                <button id="button-price">
+                  <a href={window.location.href}>
+                  Mais informações
+                  </a>
+                </button>
                 <hr></hr>
               <h1 id="about">Caracteristicas</h1>
               <div className="features">
@@ -203,8 +208,6 @@ export const PostPage = () => {
                   <p id="resume_value" key={index}>{parte.trim()}</p>
                 ))}
                 </div>
-
-                <button id="button-galery">Mais informações</button>
               </div>
             </div>
           </div>

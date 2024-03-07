@@ -22,6 +22,26 @@
   border-radius: 10px;
 }
 
+#button-galery a {
+  cursor: pointer;
+}
+
+#button-price {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  color: #fff;
+  background: #23A6F0;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: white;
+  margin-bottom: 60px;
+}
+
+#button-price a {
+  color: white;
+}
+
 #button-galery {
   border: none;
   border-radius: 10px;
@@ -190,7 +210,7 @@
 
 #description {
   text-transform: initial;
-  margin-bottom: 60px;
+  margin-bottom: 24px;
   color: #474D59;
   font-size: 18px;
   line-height: 24px;
