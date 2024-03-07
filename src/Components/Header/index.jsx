@@ -35,10 +35,10 @@ export const Header = () => {
         <div className="social-header">
           <div className="social-content__header">
             <ul>
-              <li><a href=""></a><FaFacebookSquare />
+              <li><a href="https://www.facebook.com/lotimobiliaria?mibextid=ZbWKwL"></a><FaFacebookSquare />
   </li>
               <li><a href=""></a><FaInstagramSquare /></li>
-              <li><a href=""></a><FaWhatsappSquare /></li>
+              <li><a href="https://wa.me/5541995143839"></a><FaWhatsappSquare /></li>
               {
                 data && data.username == "admin" ?
                 (<li>{data.username}</li>) :

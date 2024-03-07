@@ -62,14 +62,8 @@
   text-align: center;
   position: relative;
   max-width: 500px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
 }
 

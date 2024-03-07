@@ -103,6 +103,8 @@
   padding: 20px;
   border-radius: 10px;
   background: #F5F7FA;
+  position: relative;
+  cursor: pointer;
 }
 
 .info-post__page .price-post__page {
@@ -112,6 +114,23 @@
   border: 1px solid #f3f3f3;
   z-index: -1;
   max-height: 300px;
+  cursor: pointer;
+}
+
+.feat {
+  padding-bottom: 60px;
+}
+
+.feat ul svg {
+  width: 12px;
+  height: 12px;
+}
+
+.feat ul li {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding-bottom: 8px;
 }
 
 #title {
@@ -121,6 +140,38 @@
   text-transform: initial;
   color: #0B0C12;
   margin-top: 12px;
+  cursor: pointer;
+  position: relative;
+}
+
+#text-info {
+  display: none;
+}
+
+#value-add {
+  position: relative;
+  display: flex;
+  gap: 8px;
+}
+
+#value-add p {
+  display: none;
+}
+
+#active p {
+  display: initial;
+  position: absolute;
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #f1f1f1;
+  border-radius: 10px;
+  width: 250px;
+  top: 0px;
+  left: 20px;
+  background: #F5F7FA;
+  transition: all 0.3s ease-in-out;
 }
 
 #resume_value {

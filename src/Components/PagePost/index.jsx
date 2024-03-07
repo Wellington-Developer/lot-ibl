@@ -4,10 +4,12 @@ import './styles.css'
 import { Link, useParams } from 'react-router-dom';
 import { IoMdPin } from 'react-icons/io';
 import { GoHomeFill } from 'react-icons/go'
-import { FaChartArea } from 'react-icons/fa';
+import { FaChartArea, FaCheck } from 'react-icons/fa';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+import { FaCircleInfo } from "react-icons/fa6";
 
 export const PostPage = () => {
+  const [ modalPrice, setModalPrice ] = useState(false)
   const { id } = useParams();
   const [ openedGalery, setOpenedGalery ] = useState(false)
   const [ data, setData ] = useState([])
@@ -60,6 +62,8 @@ export const PostPage = () => {
 
   const textoAdicional = data.texto_adicional;
   const partes = textoAdicional && textoAdicional.split(/[\–—-]/)
+  const feat = data && data.features;
+  const feature = feat ? feat.split(',').map(item => item.trim()) : [];
 
   return (
     <>
@@ -88,11 +92,16 @@ export const PostPage = () => {
                     </Link>
                   )
                 }
+                
                 <p>
                   <IoMdPin />
                   {data.localidade}
                 </p>
                 <h1 id="title">{data.title}</h1>
+
+
+                
+
                 <p id="description">{data.breve_descricao}</p>
                 <hr></hr>
               <h1 id="about">Caracteristicas</h1>
@@ -126,10 +135,22 @@ export const PostPage = () => {
                   <FaChartArea />
                   <h1>{data.metros_totais && data.metros_totais}</h1>
                   <p>totais</p>
+                  {
+                    console.log(data)
+                  }
                 </div>
               </div>
               <hr></hr>
-
+              <div className="feat">
+                  {
+                    feature.map((item) => {
+                      return <ul>
+                        <li><FaCheck />{item}</li>
+                      </ul>
+                    })
+                  }
+                </div>
+                <hr></hr>
               <div>
                 <h1 id="full-description">Descrição completa</h1>
                 <p id="content_desc">{data.descricao_completa}</p>
@@ -162,8 +183,16 @@ export const PostPage = () => {
                   )
                 }
               </div>
+              <div id="value-add">
+                  <FaCircleInfo onMouseEnter={() => setModalPrice(true)}
+                  onMouseLeave={() => setModalPrice(false)}/>
+                  <div id={`${modalPrice ? 'active' : ''}`}>
+                    <p>{data.informacao_adicional_titulo}</p>
+                  </div>
+                </div>
 
               <div className="price-post__page">
+                
                 <p id="price-total">Preço total</p>
                 <h1>R$ {Number(data.preco).toLocaleString('pt-br', {
                   type: 'currency',

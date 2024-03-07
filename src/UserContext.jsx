@@ -104,7 +104,7 @@ export const UserStorage = ({ children }) => {
   
         // Aplica filtro para posts comerciais, se necessário
         if (apenasComercio) {
-          filteredPosts = filteredPosts.filter((post) => post.title.toLowerCase().includes("sala"));
+          filteredPosts = filteredPosts.filter((post) => post.tipo == "Comercial");
         }
   
         // Aplica filtro para preço, se necessário

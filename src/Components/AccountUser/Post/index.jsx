@@ -33,7 +33,7 @@ export const Post = () => {
   const [tipo, setTipo] = useState('');
   const [locacaoOuVenda, setLocacaoOuVenda] = useState('');
   const [ cep, setCep ] = useState('')
-  const tipos = ['Apartamento', 'Casa', 'Sobrado', 'Kitnet', 'Chalé', 'Loft', 'Duplex', 'Triplex', 'Flat', 'Cobertura', 'Terreno'];
+  const tipos = ['Apartamento', 'Casa', 'Sobrado', 'Kitnet', 'Chalé', 'Loft', 'Duplex', 'Triplex', 'Flat', 'Cobertura', 'Terreno', 'Comercial'];
   const locacaOuVenda = ['Locacao', 'Venda'];
   const statusOptions = ["", "Locado", "Vendido", "Reservado", "Disponivel"];
   const { filterPosts } = useContext(UserContext)

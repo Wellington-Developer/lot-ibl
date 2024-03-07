@@ -16,6 +16,7 @@ header {
   display: flex;
   justify-content: end;
   margin: 0 auto;
+  z-index: 99999999999999999999999999999999999;
 }
 
 .social-content__header img, .social-content__header svg {
